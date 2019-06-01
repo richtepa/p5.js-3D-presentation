@@ -4,32 +4,9 @@
 }
 
 body {
-    margin: 0px;
     font-size: 32px;
     font-family: SourceCodePro;
     background-color: lightcoral;
-}
-
-.hidden {
-    visibility: hidden;
-    display: none;
-}
-
-#black, #white {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    left: 0px;
-    top: 0px;
-    z-index: 100;
-}
-
-#black {
-    background-color: black;
-}
-
-#white {
-    background-color: white;
 }
 
 canvas {
