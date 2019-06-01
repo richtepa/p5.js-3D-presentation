@@ -1,0 +1,83 @@
+@font-face {
+    font-family: SourceCodePro;
+    src: url(/SourceCodePro-Bold.otf);
+}
+
+body {
+    margin: 0px;
+    font-size: 32px;
+    font-family: SourceCodePro;
+    background-color: lightcoral;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+#black, #white {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+}
+
+#black {
+    background-color: black;
+}
+
+#white {
+    background-color: white;
+}
+
+canvas {
+    position: fixed;
+    height: 100vh;
+    width: 33vw;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    cursor: none;
+}
+
+#slides {
+    position: fixed;
+    height: 100vh;
+    width: 67vw;
+    top: 0px;
+    left: 33vw;
+    z-index: 1;
+}
+
+.slide {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    position: relative;
+    margin: 5vw;
+    font-size: 48px;
+    text-align: center;
+}
+
+.text{
+    margin: 5vw;
+    text-align: justify;
+}
+
+.slideNum{
+    position: fixed;
+    width: 10vw;
+    bottom: 1.25vw;
+    right: 5vw;
+    text-align: right;
+    z-index: 5;
+}
+
+li{
+    margin-bottom: 1vw;
+}
