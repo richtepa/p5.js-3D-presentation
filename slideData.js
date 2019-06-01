@@ -5,32 +5,32 @@ slideData = {
     "objects": [
         {
             "name": "table",
-            "model": "/3Dmodel/table/Table.obj",
+            "model": "3Dmodel/table/Table.obj",
             "material": [100, 50, 0],
             "scale": 0.5
         },
         {
             "name": "computer",
-            "model": "/3Dmodel/pc/PC.obj",
-            "texture": "/3Dmodel/pc/PC.png",
+            "model": "3Dmodel/pc/PC.obj",
+            "texture": "3Dmodel/pc/PC.png",
             "scale": 1
         },
         {
             "name": "mouse",
-            "model": "/3Dmodel/mouse/ComputerMouse.obj",
-            "texture": "/3Dmodel/mouse/ComputerMouse.png",
+            "model": "3Dmodel/mouse/ComputerMouse.obj",
+            "texture": "3Dmodel/mouse/ComputerMouse.png",
             "scale": 4
         },
         {
             "name": "monitor",
-            "model": "/3Dmodel/monitor/Monitor.obj",
-            "texture": "/3Dmodel/monitor/Monitor.png",
+            "model": "3Dmodel/monitor/Monitor.obj",
+            "texture": "3Dmodel/monitor/Monitor.png",
             "scale": 1
         },
         {
             "name": "keyboard",
-            "model": "/3Dmodel/keyboard/Keyboard.obj",
-            "texture": "/3Dmodel/keyboard/Keyboard.png",
+            "model": "3Dmodel/keyboard/Keyboard.obj",
+            "texture": "3Dmodel/keyboard/Keyboard.png",
             "scale": 1
         }
     ],
