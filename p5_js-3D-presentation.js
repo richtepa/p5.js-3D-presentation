@@ -192,6 +192,7 @@ function next() {
 
 
 function showSlide(n, animate) {
+    slideActivated(n);
 
     //TEXT
     slides = document.getElementsByClassName("slide");

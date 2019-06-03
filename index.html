@@ -9,7 +9,14 @@
 </head>
 
 <body>
-
+    <div id="structure">
+    <ul>
+        <li id="structure1" class="structure">Fits on every Desk</li>
+        <li id="structure2" class="structure">Specs</li>
+        <li id="structure3" class="structure">Screen-Specs</li>
+        <li id="structure4" class="structure">Price</li>
+    </ul>
+    </div>
     <div id="slides">
         <div id="slide0" class="slide hidden">
             <div class="title" style="top:35vh">The new Ultradisplay UD-4K</div>
@@ -67,6 +74,18 @@
     <noscript>
         You need to <a href="https://www.enable-javascript.com/">enable javascript</a> for this game!
     </noscript>
+    
+    <script>
+        function slideActivated(slideNumber){
+            structures = document.getElementsByClassName("structure");
+            for(structure of structures){
+                structure.classList.remove("active");
+            }
+            try{
+                document.getElementById("structure" + slideNumber).classList.add("active");
+            } catch {}
+        }
+    </script>
 
     <script src="slideData.js"></script>
     <script src="p5_js-3D-presentation.js"></script>
