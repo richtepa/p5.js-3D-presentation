@@ -197,10 +197,10 @@ const pres = function (sketch) {
 
 document.addEventListener("keydown", function (e) {
     //console.log(e.keyCode);
-    if (e.keyCode == "37") {
+    if (e.keyCode == "37" || e.keyCode == "38") {
         before();
     }
-    if (e.keyCode == "39") {
+    if (e.keyCode == "39" || e.keyCode == "40") {
         next();
     }
     if (e.keyCode == "66") {
