@@ -13,4 +13,4 @@
 
 ## Example
 
-[The example](https://richter.dev/p5-js-3D-presentation/) is built with [this index.html](https://github.com/richtepa/p5.js-3D-presentation/blob/master/index.html) and [this slideData](https://github.com/richtepa/p5.js-3D-presentation/blob/master/slideData.js).
+[The example](https://richter.dev/p5-js-3D-presentation/example) is built with [this index.html](https://github.com/richtepa/p5.js-3D-presentation/blob/master/index.html) and [this slideData](https://github.com/richtepa/p5.js-3D-presentation/blob/master/slideData.js).
