@@ -1,3 +1,0 @@
-<filesMatch ".(png|jpg|wbp|obj)$">
-Header set Cache-Control "max-age=31536000, public, only-if-cached"
-</filesMatch>
