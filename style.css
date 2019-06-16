@@ -8,63 +8,50 @@ body {
     font-family: SourceCodePro;
 }
 
-#structure{
-    position: fixed;
+#structure {
     height: 100vh;
     width: 15vw;
     top: 0px;
     left: 0px;
-    z-index: 1;
     font-size: 24px;
-    display: flex;
-    align-items: center;
     color: #888888;
     background-color: lightcoral;
 }
 
-.active{
-    color: black;
-}
-
-canvas {
-    position: fixed;
+#pres3D {
     height: 100vh;
     width: 33vw;
     top: 0px;
     right: 0px;
-    z-index: 1;
-    cursor: none;
 }
 
 #slides {
-    position: fixed;
     height: 100vh;
     width: 52vw;
     top: 0px;
     left: 15vw;
-    z-index: 1;
-    background-color: lightcoral;
 }
 
 .slide {
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
+    background-color: lightcoral;
 }
 
-.title{
+.title {
     position: relative;
     margin: 5vw;
     font-size: 48px;
     text-align: center;
 }
 
-.text{
+.text {
     margin: 5vw;
     text-align: justify;
 }
 
-.slideNum{
+.slideNum {
     position: fixed;
     width: 10vw;
     bottom: 1.25vw;
@@ -73,6 +60,6 @@ canvas {
     z-index: 5;
 }
 
-li{
+.structure {
     margin-bottom: 1vw;
 }

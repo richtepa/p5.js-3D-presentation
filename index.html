@@ -3,20 +3,29 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+    <!-- add the presentation stylesheet -->
     <link rel="stylesheet" href="p5_js-3D-presentation.css" type="text/css">
-    <title>Presentation</title>
+
+    <!-- add your own stylesheet -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+    <title>Presentation Demo</title>
 </head>
 
 <body>
-    <div id="structure">
-    <ul>
-        <li id="structure1" class="structure">Fits on every Desk</li>
-        <li id="structure2" class="structure">Specs</li>
-        <li id="structure3" class="structure">Screen-Specs</li>
-        <li id="structure4" class="structure">Price</li>
-    </ul>
-    </div>
+    <noscript>
+        You need to <a href="https://www.enable-javascript.com/">enable javascript</a> for this presentation!
+    </noscript>
+
+
+    <!-- add the structure-element for your slides -->
+    <div id="structure"></div>
+
+
+    <!-- add your slides width content -->
     <div id="slides">
         <div id="slide0" class="slide hidden">
             <div class="title" style="top:35vh">The new Ultradisplay UD-4K</div>
@@ -67,30 +76,42 @@
             <div class="title" style="margin-top: 30vh">999€</div>
             <div class="slideNum">4</div>
         </div>
-    </div>
-    <div id="black" class="hidden"></div>
-    <div id="white" class="hidden"></div>
 
-    <noscript>
-        You need to <a href="https://www.enable-javascript.com/">enable javascript</a> for this game!
-    </noscript>
-    
+        <!-- add "pseudo"-class for empty slides-->
+        <div id="slide5" class="slide pseudo hidden"></div>
+
+    </div>
+
+    <!-- add the 3D-Model-Viewer -->
+    <div id="pres3D"></div>
+
+    <!-- add your own scripts -->
     <script>
-        function slideActivated(slideNumber){
-            structures = document.getElementsByClassName("structure");
-            for(structure of structures){
-                structure.classList.remove("active");
-            }
-            try{
-                document.getElementById("structure" + slideNumber).classList.add("active");
-            } catch {}
+        function slideActivated(slideNumber) {
+            // will be executed when slide gets changed
         }
+
+        function beforeDraw() {
+            // will be excecuted before p5-content gets drawn
+        }
+
+        function afterDraw() {
+            // will be excecuted after p5-content get drawn
+        }
+
     </script>
 
-    <script src="slideData.js"></script>
-    <script src="p5_js-3D-presentation.js"></script>
+    <!-- add the p5 libraries -->
     <script src="p5.min.js"></script>
     <script src="p5.dom.min.js"></script>
+
+    <!-- add your slide data -->
+    <script src="slideData.js"></script>
+
+    <!-- add the presentation script -->
+    <script src="p5_js-3D-presentation.js"></script>
+
+
 </body>
 
 </html>
