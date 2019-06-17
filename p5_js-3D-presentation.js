@@ -7,7 +7,7 @@ touchX = undefined;
 touchY = undefined;
 content = document.body;
 width = content.clientWidth;
-width = content.clientHeight;
+height = content.clientHeight;
 
 cam = new Cam();
 objects = new Array();
