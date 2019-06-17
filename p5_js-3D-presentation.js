@@ -140,13 +140,13 @@ const pres = function (sketch) {
     }
 
     sketch.draw = function () {
-        try {
-            // user implemented function
-            beforeDraw();
-        } catch {}
-
         sketch.noStroke();
         sketch.background(slideData.background[0], slideData.background[1], slideData.background[2]);
+        
+        try {
+            // user implemented function
+            beforeDraw(sketch);
+        } catch {}
 
         //CAMERA
         if (cam.animate) {
@@ -209,7 +209,7 @@ const pres = function (sketch) {
 
         try {
             // user implemented function
-            afterDraw();
+            afterDraw(sketch);
         } catch {}
     }
 }
