@@ -3,9 +3,11 @@ positionVariables = ["x", "y", "z", "rx", "ry", "rz"];
 models = new Object();
 textures = new Object();
 actualSlide = 0;
-mouseX = undefined;
+touchX = undefined;
+touchY = undefined;
 content = document.body;
 width = content.clientWidth;
+width = content.clientHeight;
 
 cam = new Cam();
 objects = new Array();
@@ -18,17 +20,20 @@ window.onload = function () {
     width = content.clientWidth;
 
     content.addEventListener("touchstart", function (e) {
-        mouseX = e.changedTouches[0].pageX;
+        touchX = e.changedTouches[0].pageX;
+        touchY = e.changedTouches[0].pageX;
     });
     content.addEventListener("touchend", function (e) {
-        dif = e.changedTouches[0].pageX - mouseX;
-        if (dif > width / 3) {
+        difX = e.changedTouches[0].pageX - touchX;
+        difY = e.changedTouches[0].pageY - touchY;
+        if (difX > width / 3 || difY > height / 3) {
             next();
         }
-        if (dif < -width / 3) {
+        if (difX < -width / 3 || difY < -height / 3) {
             before();
         }
-        mouseX = undefined;
+        touchX = undefined;
+        touchY = undefined;
     });
 
     createAllElements();
