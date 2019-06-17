@@ -22,12 +22,11 @@ window.onload = function () {
 });
 content.addEventListener("touchend", function(e){
 	dif = e.changedTouches[0].pageX - mouseX;
-	console.log(dif);
 	if(dif > width/3){
-		console.log("right");
+		next();
 	}
 	if(dif < -width/3){
-		console.log("left");
+		before();
 	}
 	mouseX = undefined;
 });
