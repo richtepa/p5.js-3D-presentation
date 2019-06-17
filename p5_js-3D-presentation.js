@@ -3,6 +3,9 @@ positionVariables = ["x", "y", "z", "rx", "ry", "rz"];
 models = new Object();
 textures = new Object();
 actualSlide = 0;
+mouseX = undefined;
+content = document.body;
+width = content.clientWidth;
 
 cam = new Cam();
 objects = new Array();
@@ -12,6 +15,23 @@ for (model of slideData.objects) {
 }
 
 window.onload = function () {
+    width = content.clientWidth;
+    
+    content.addEventListener("touchstart", function(e){
+	mouseX = e.changedTouches[0].pageX;
+});
+content.addEventListener("touchend", function(e){
+	dif = e.changedTouches[0].pageX - mouseX;
+	console.log(dif);
+	if(dif > width/3){
+		console.log("right");
+	}
+	if(dif < -width/3){
+		console.log("left");
+	}
+	mouseX = undefined;
+});
+    
     createAllElements();
     changeSlide(0, false);
 }
@@ -116,6 +136,7 @@ const pres = function (sketch) {
     }
 
     sketch.windowResized = function () {
+        width = content.clientWidth;
         sketch.resizeCanvas(document.getElementById("pres3D").clientWidth, document.getElementById("pres3D").clientHeight);
     }
 
