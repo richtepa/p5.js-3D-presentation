@@ -143,6 +143,7 @@ const pres = function (sketch) {
 
     sketch.windowResized = function () {
         width = content.clientWidth;
+        height = content.clientHeight;
         sketch.resizeCanvas(document.getElementById("pres3D").clientWidth, document.getElementById("pres3D").clientHeight);
     }
 
