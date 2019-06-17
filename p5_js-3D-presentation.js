@@ -16,21 +16,21 @@ for (model of slideData.objects) {
 
 window.onload = function () {
     width = content.clientWidth;
-    
-    content.addEventListener("touchstart", function(e){
-	mouseX = e.changedTouches[0].pageX;
-});
-content.addEventListener("touchend", function(e){
-	dif = e.changedTouches[0].pageX - mouseX;
-	if(dif > width/3){
-		next();
-	}
-	if(dif < -width/3){
-		before();
-	}
-	mouseX = undefined;
-});
-    
+
+    content.addEventListener("touchstart", function (e) {
+        mouseX = e.changedTouches[0].pageX;
+    });
+    content.addEventListener("touchend", function (e) {
+        dif = e.changedTouches[0].pageX - mouseX;
+        if (dif > width / 3) {
+            next();
+        }
+        if (dif < -width / 3) {
+            before();
+        }
+        mouseX = undefined;
+    });
+
     createAllElements();
     changeSlide(0, false);
 }
@@ -80,7 +80,7 @@ function Model(data) {
     this.model = data.model;
     this.texture = data.texture;
     this.material = data.material;
-    this.scale = data.scale;
+    this.scale = data.scale || 1;
     this.reset();
 }
 
@@ -88,20 +88,22 @@ function Model(data) {
 
 function createAllElements() {
     structure = document.getElementById("structure");
-    ul = document.createElement("ul");
-    structure.appendChild(ul);
-    for (i = 0; i < slideData.slides.length; i++) {
-        slide = slideData.slides[i];
-        if (slide.title != undefined) {
-            e = document.createElement("li");
-            e.id = "structure" + i;
-            e.classList.add("structure");
-            e.innerHTML = slide.title;
-            e.addEventListener("click", function () {
-                actualSlide = this.id.split("structure")[1];
-                changeSlide(actualSlide, false);
-            });
-            ul.appendChild(e);
+    if (structure != undefined) {
+        ul = document.createElement("ul");
+        structure.appendChild(ul);
+        for (i = 0; i < slideData.slides.length; i++) {
+            slide = slideData.slides[i];
+            if (slide.title != undefined) {
+                e = document.createElement("li");
+                e.id = "structure" + i;
+                e.classList.add("structure");
+                e.innerHTML = slide.title;
+                e.addEventListener("click", function () {
+                    actualSlide = this.id.split("structure")[1];
+                    changeSlide(actualSlide, false);
+                });
+                ul.appendChild(e);
+            }
         }
     }
 
@@ -142,7 +144,7 @@ const pres = function (sketch) {
     sketch.draw = function () {
         sketch.noStroke();
         sketch.background(slideData.background[0], slideData.background[1], slideData.background[2]);
-        
+
         try {
             // user implemented function
             beforeDraw(sketch);
@@ -294,10 +296,12 @@ function update3D(n, animate) {
     //CAMERA
     cam.reset();
     for (s = 0; s <= n; s++) {
-        for (p of positionVariables) {
-            val = slideData.slides[s]["camera"][p];
-            if (val != undefined) {
-                cam.aim[p] += val;
+        if (slideData.slides[s]["camera"] != undefined) {
+            for (p of positionVariables) {
+                val = slideData.slides[s]["camera"][p];
+                if (val != undefined) {
+                    cam.aim[p] += val;
+                }
             }
         }
     }
@@ -314,13 +318,15 @@ function update3D(n, animate) {
     for (obj of objects) {
         obj.reset();
         for (s = 0; s <= n; s++) {
-            if (slideData.slides[s][obj.name].visible != undefined) {
-                obj.visible = slideData.slides[s][obj.name].visible;
-            }
-            for (p of positionVariables) {
-                val = slideData.slides[s][obj.name][p];
-                if (val != undefined) {
-                    obj.aim[p] += val;
+            if (slideData.slides[s][obj.name] != undefined) {
+                if (slideData.slides[s][obj.name].visible != undefined) {
+                    obj.visible = slideData.slides[s][obj.name].visible;
+                }
+                for (p of positionVariables) {
+                    val = slideData.slides[s][obj.name][p];
+                    if (val != undefined) {
+                        obj.aim[p] += val;
+                    }
                 }
             }
         }

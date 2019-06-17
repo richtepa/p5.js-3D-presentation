@@ -2,44 +2,41 @@
 // all values (except noClick) add up trough the process
 
 slideData = {
-    
+
     // define your background and objects
     "background": [240, 128, 128],
     "objects": [{
             "name": "table",
             "model": "3Dmodel/table/Table.obj",
-        
+
             // you can use rgb-colors as material
             "material": [100, 50, 0],
-        
+
             "scale": 0.5
                 },
         {
             "name": "computer",
             "model": "3Dmodel/pc/PC.obj",
-            "texture": "3Dmodel/pc/PC.png",
-            "scale": 1
+            "texture": "3Dmodel/pc/PC.png"
                 },
         {
             "name": "mouse",
             "model": "3Dmodel/mouse/ComputerMouse.obj",
-            
+
             // or images as textures
             "texture": "3Dmodel/mouse/ComputerMouse.png",
-            
+
             "scale": 4
                 },
         {
             "name": "monitor",
             "model": "3Dmodel/monitor/Monitor.obj",
-            "texture": "3Dmodel/monitor/Monitor.png",
-            "scale": 1
+            "texture": "3Dmodel/monitor/Monitor.png"
                 },
         {
             "name": "keyboard",
             "model": "3Dmodel/keyboard/Keyboard.obj",
-            "texture": "3Dmodel/keyboard/Keyboard.png",
-            "scale": 1
+            "texture": "3Dmodel/keyboard/Keyboard.png"
                 }
             ],
     "slides": [{
@@ -83,10 +80,10 @@ slideData = {
             }
                 },
         {
-            
+
             // titles are shown in the structure
             "title": "Fits on every desk",
-            
+
             "duration": 0.5,
             "camera": {
                 "ry": 40,
@@ -102,7 +99,6 @@ slideData = {
             "mouse": {
                 "visible": true
             },
-            "monitor": {},
             "keyboard": {
                 "visible": true
             }
@@ -118,10 +114,7 @@ slideData = {
             },
             "computer": {
                 "x": 500
-            },
-            "mouse": {},
-            "monitor": {},
-            "keyboard": {}
+            }
                 },
 
         {
@@ -140,28 +133,24 @@ slideData = {
             "mouse": {
                 "z": 200
             },
-            "monitor": {},
             "keyboard": {
                 "z": 200
             },
                 },
         {
-            
+
             // with noClick the next slide gets shown after duration
             "noClick": true,
-            
+
             "duration": 0.5,
             "camera": {
                 "ry": -40,
                 "x": 100,
                 "z": -50
             },
-            "table": {},
-            "computer": {},
             "mouse": {
                 "visible": false
             },
-            "monitor": {},
             "keyboard": {
                 "visible": false
             }
@@ -173,12 +162,7 @@ slideData = {
                 "ry": 40,
                 "x": 100,
                 "z": 50
-            },
-            "table": {},
-            "computer": {},
-            "mouse": {},
-            "monitor": {},
-            "keyboard": {}
+            }
                 }
             ]
 };
