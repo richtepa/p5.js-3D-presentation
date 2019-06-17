@@ -143,7 +143,9 @@ const pres = function (sketch) {
 
     sketch.draw = function () {
         sketch.noStroke();
-        sketch.background(slideData.background[0], slideData.background[1], slideData.background[2]);
+        if(slideData.background != undefined){
+            sketch.background(slideData.background[0], slideData.background[1], slideData.background[2]);
+        }
 
         try {
             // user implemented function
@@ -158,7 +160,7 @@ const pres = function (sketch) {
                     cam.progress = 1;
                 }
             } else {
-                if (slideData.slides[actualSlide].noClick) {
+                if (slideData.slides[actualSlide].autoplay) {
                     next();
                 }
             }
@@ -241,7 +243,7 @@ function before() {
     if (actualSlide < 0) {
         actualSlide = 0;
     }
-    while (slideData.slides[actualSlide].noClick) {
+    while (slideData.slides[actualSlide].autoplay) {
         actualSlide--;
         if (actualSlide < 0) {
             actualSlide = 0;
@@ -272,7 +274,7 @@ function changeSlide(n, animate) {
 
 
 function updateStructure(n) {
-    while(slideData.slides[n].noClick){
+    while(slideData.slides[n].autoplay){
         n++;
     }
     structures = document.getElementsByClassName("structure");
@@ -308,7 +310,7 @@ function update3D(n, animate) {
             }
         }
     }
-    if (animate) {
+    if (animate && slideData.slides[n].duration != undefined) {
         cam.duration = slideData.slides[n].duration;
     } else {
         cam.duration = 0;
@@ -333,7 +335,7 @@ function update3D(n, animate) {
                 }
             }
         }
-        if (animate) {
+        if (animate && slideData.slides[n].duration != undefined) {
             obj.duration = slideData.slides[n].duration;
         } else {
             obj.duration = 0;

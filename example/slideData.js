@@ -1,10 +1,11 @@
 // camera rotation --> centerpoint
-// all values (except noClick) add up trough the process
+// all values add up trough the process
 
 slideData = {
 
     // define your background and objects
     "background": [240, 128, 128],
+    
     "objects": [{
             "name": "table",
             "model": "3Dmodel/table/Table.obj",
@@ -139,8 +140,8 @@ slideData = {
                 },
         {
 
-            // with noClick the next slide gets shown after duration
-            "noClick": true,
+            // with autoplay the next slide gets shown after duration
+            "autoplay": true,
 
             "duration": 0.5,
             "camera": {
