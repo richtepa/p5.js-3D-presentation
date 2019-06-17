@@ -272,6 +272,9 @@ function changeSlide(n, animate) {
 
 
 function updateStructure(n) {
+    while(slideData.slides[n].noClick){
+        n++;
+    }
     structures = document.getElementsByClassName("structure");
     for (structure of structures) {
         structure.classList.remove("active");
