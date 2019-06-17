@@ -59,8 +59,8 @@ function afterDraw(sketch) {
 ```
 
 You can use following variables:
-
-***TODO***
+* `height`: body height
+* `width`: body width
 
 ## Example
 
@@ -70,8 +70,8 @@ Check out [this demo](https://richter.dev/p5-js-3D-presentation/example) made wi
 
 By default, the cursor is hidden when inside the `#pres3D` element.
 
-* next slide: <kbd>&#8594;</kbd> or <kbd>&#8595;</kbd>
-* last slide: <kbd>&#8592;</kbd> or <kbd>&#8593;</kbd>
+* next slide: use keys or swipe on touchscreen <kbd>&#8594;</kbd> / <kbd>&#8595;</kbd>
+* last slide: use keys or swipe on touchscreen <kbd>&#8592;</kbd> / <kbd>&#8593;</kbd>
 * white screen: <kbd>w</kbd>
 * black screen: <kbd>b</kbd>
 * enter fullscreen: <kbd>f</kbd>
