@@ -25,6 +25,7 @@ All the information about the 3D scene is saved in the js-object slideData:
 * `.background`: array with r,g,b-values of the background-color. Leave it undefined to use no background.
 * `.objects`: array of all used objects in the scene
   * `.name`: (required) name of the object, used in slides as identifier
+  * `groups`: array of the groups it is used
   * `.model`: (required) path of the file of the 3D-model
   * `.texture` **or** `.material`: (required) path of the file of the texture or array with r,g,b-values of the material color
   * `scale`: Scale of the model (default: 1)
@@ -32,7 +33,7 @@ All the information about the 3D scene is saved in the js-object slideData:
   * `.duration`: animationtime in seconds (default: 0)
   * `.title`: use if a title should appear in the structure
   * `.autoplay`: when finished the animation, doing the next slide, if true (default: false)
-  * `.camera`and `.[objects]`: use the camera and the name of an object as identifier for their propertys. All propertys are added through the slides.
+  * `.camera`and `.[object]` and `.[object]`: use the camera and the name of an object or group as identifier for their propertys. All propertys are added through the slides and groups.
     * `visible`: model is visible if true (default: true)
     * `.x`, `.y` and `.z`: x, y and z position of the object (default: 0)
     * `.rx`, `.ry` and `.rz`: x, y and z rotation of the object (in degrees) (center point at `.camera`) (default: 0)

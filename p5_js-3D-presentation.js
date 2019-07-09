@@ -86,6 +86,8 @@ function Model(data) {
     this.texture = data.texture;
     this.material = data.material;
     this.scale = data.scale || 1;
+
+    this.groups = data.groups;
     this.reset();
 }
 
@@ -149,7 +151,7 @@ const pres = function (sketch) {
 
     sketch.draw = function () {
         sketch.noStroke();
-        if(slideData.background != undefined){
+        if (slideData.background != undefined) {
             sketch.background(slideData.background[0], slideData.background[1], slideData.background[2]);
         }
 
@@ -209,7 +211,7 @@ const pres = function (sketch) {
                 if (textures[obj.name] != undefined) {
                     sketch.texture(textures[obj.name]);
                 } else {
-                    sketch.fill(obj.material[0], obj.material[1], obj.material[2]);
+                    sketch.specularMaterial(obj.material[0], obj.material[1], obj.material[2]);
                 }
                 sketch.model(models[obj.name]);
                 sketch.pop();
@@ -279,9 +281,10 @@ function changeSlide(n, animate) {
 
 
 
-function updateStructure(n) {
-    while(slideData.slides[n].autoplay){
-        n++;
+function updateStructure(snum) {
+    n = snum;
+    while (slideData.slides[n].title == undefined) {
+        n--;
     }
     structures = document.getElementsByClassName("structure");
     for (structure of structures) {
@@ -329,6 +332,20 @@ function update3D(n, animate) {
     for (obj of objects) {
         obj.reset();
         for (s = 0; s <= n; s++) {
+            for (group of obj.groups) {
+                if (slideData.slides[s][group] != undefined) {
+                    if (slideData.slides[s][group].visible != undefined) {
+                        obj.visible = slideData.slides[s][group].visible;
+                    }
+                    for (p of positionVariables) {
+                        val = slideData.slides[s][group][p];
+                        if (val != undefined) {
+                            obj.aim[p] += val;
+                        }
+                    }
+                }
+            }
+
             if (slideData.slides[s][obj.name] != undefined) {
                 if (slideData.slides[s][obj.name].visible != undefined) {
                     obj.visible = slideData.slides[s][obj.name].visible;
