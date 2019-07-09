@@ -33,7 +33,7 @@ All the information about the 3D scene is saved in the js-object slideData:
   * `.duration`: animationtime in seconds (default: 0)
   * `.title`: use if a title should appear in the structure
   * `.autoplay`: when finished the animation, doing the next slide, if true (default: false)
-  * `.camera`and `.[object]` and `.[object]`: use the camera and the name of an object or group as identifier for their propertys. All propertys are added through the slides and groups.
+  * `.camera`and `.[object]` and `.[group]`: use the camera and the name of an object or group as identifier for their propertys. All propertys are added through the slides and groups.
     * `visible`: model is visible if true (default: true)
     * `.x`, `.y` and `.z`: x, y and z position of the object (default: 0)
     * `.rx`, `.ry` and `.rz`: x, y and z rotation of the object (in degrees) (center point at `.camera`) (default: 0)
