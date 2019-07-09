@@ -51,14 +51,14 @@ body {
     text-align: justify;
 }
 
-.slideNum {
+#slideNum {
     position: fixed;
     width: 10vw;
     bottom: 1.25vw;
-    right: 5vw;
-    text-align: right;
+    left: 1vw;
     z-index: 5;
 }
+
 
 .structure {
     margin-bottom: 1vw;

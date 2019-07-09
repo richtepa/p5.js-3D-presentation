@@ -16,6 +16,7 @@ If you already know [p5.js](https://github.com/processing/p5.js), you can draw a
 * To get started, add the [p5 library](https://github.com/processing/p5.js): `<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>` and the [3D-presentation script](https://github.com/richtepa/p5.js-3D-presentation/blob/master/p5_js-3D-presentation.js) `<script src="p5_js-3D-presentation.js"></script>`
 * In the header of your html put the [3D-presentation stylesheet]() above your own styles: `<link rel="stylesheet" href="p5_js-3D-presentation.css">`
 * If you want to show a structure of your slides, add a `#structure` element.
+* If you want to show the slidenumber, add a `#slideNum` element.
 * For your slides (text) create a `#slides`element with `#slide?.slide.hidden`elements inside. Use numbers starting from 0 istead of the ?. Inside these elements you can add amything you want. If you want to show the same information like the last one use the add `.pseudo`.
 * The `#pres3D`element defined the spot for your 3D-view.
 

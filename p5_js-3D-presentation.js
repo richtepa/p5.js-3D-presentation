@@ -275,11 +275,25 @@ function changeSlide(n, animate) {
         slideActivated(n);
     } catch {}
     updateStructure(n);
+    updateSlideNum(n);
     updateSlide(n);
     update3D(n, animate);
 }
 
-
+function updateSlideNum(n) {
+    slideIndicator = n;
+    for (i = 0; i < n; i++) {
+        if (slideData.slides[i].autoplay) {
+            slideIndicator--;
+        }
+    }
+    if (slideIndicator == 0) {
+        slideIndicator = "";
+    }
+    try {
+        document.getElementById("slideNum").innerHTML = slideIndicator;
+    } catch {}
+}
 
 function updateStructure(snum) {
     n = snum;
